@@ -1,69 +1,71 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #2A7B9B;
-background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 94%, rgba(237, 221, 83, 1) 100%);
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
-margin: 0;
+    background: #22C1C3;
+    background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+    display: flex;
+    height: 100vh;
+    justify-content: center; /* flex-start / flex-end */
+    align-items: center; /* flex-start / flex-end */ 
+    margin: 0;
 }
 
 .container {
-    background-color: rgb(219, 214, 208);
-padding: 30px;
-border-radius: 20px;
-text-align: center;
-width: 300px;
-box-shadow: -59px -12px 69px 60px rgba(0,0,0,0.75);
--webkit-box-shadow: -59px -12px 69px 60px rgba(0,0,0,0.75);
--moz-box-shadow: -59px -12px 69px 60px rgba(0,0,0,0.75);
-flex-direction: column;
-display: flex;
-gap: 20px;
+    background-color: #fff; /* #ffffff / white*/
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    width: 300px;
+    box-shadow: -2px -1px 16px 0px rgba(0,0,0,0.75);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 input[type="password"], input[type="text"]{
     width: 85%;
     padding: 10px 40px 10px 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc; /*#cccccc*/
     border-radius: 5px;
     font-size: 16px;
 }
+
 #btn_validar {
-  margin: 15px;
-  background-color: rgb(6, 144, 20);
-  border: none;
-  padding: 7px 20px;
-  border-radius: 10px;
-  font-size: 16px;
-  box-shadow: 0 0 2px 0.5px rgba(0,0,0,0.75);
-  cursor: pointer;
+    margin-top: 5px;
+    background-color: #e6f956;
+    border: none;
+    padding: 7px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    box-shadow: 0 0 2px 0.5px rgba(0,0,0,0.29);
+    cursor: pointer;
 }
+
 #btn_validar:hover {
-    background-color: aquamarine;
-   color: azure;
+    background-color: #d7f307;
+    color: orange;
 }
 
 .toggle_password {
     position: absolute;
     cursor: pointer;
-    top: 50px;
+    top: 50%;
     right: 10px;
-    transform: translatY(-50%);
-    color: #ccc;
-
+    transform: translateY(-50%);
+    color: #888;
 }
+
 .inputs {
     position: relative;
-    width: 100px;
+    width: 100%;
 }
+
 a {
     text-decoration: none;
-    color: rgb(175, 187, 197);
+    color: #888;
+    transition: all 0.8s ease;
 }
+
 a:hover {
-    color: rgb(45, 38, 28);
+    color: #f7a828;
     text-decoration: underline;
-    transition: none;
 }
