@@ -14,20 +14,40 @@ function validar() {
     const uppercase = /[A-Z]/.test(passwordValue);
     const number = /\d/.test(passwordValue);
     const specialchar = /[\W_]/.test(passwordValue);
+    
 
-    if (passwordValue.length < 8) {
-        Swal.fire("Error", "La contraseña debe tener al menos 8 caracteres", "error");
+    
+
+   if (passwordValue.length < 8) {
+        Swal.fire("Error", 
+            "La contraseña debe tener al menos 8 caracteres", 
+            "error");
         return;
     }
 
-    if (!lowercase || !uppercase || !number || !specialchar) {
+    if (lowercase && uppercase &&  number && specialchar){
         Swal.fire(
-            "Error",
-            "La contraseña debe incluir mayúsculas, minúsculas, números y caracteres especiales",
-            "error"
+            "FELICIDADES",
+            "CONTRASE;A CORRECTA ",
+            "SUCCES"
         );
-        return;
+        
+    } else{
+        Swal.fire({
+            icon: "error",
+            title: "contrasea invalida:",
+            html: `
+            <ul style="text-aling:left; nargin-left:20px;">
+            <li>${number ? "🖐️" : "❌"} Al menos un numero</li>
+            <li>${lowercase ? "🖐️" : "❌"} Al menos una minuscula</li>
+            <li>${uppercase ? "🖐️" : "❌"} Al menos una mayuscula</li>
+            <li>${specialchar ? "🖐️" : "❌"} Al menos un caracter</li>
+            </ul>
+        `
+        }
+
+        )
     }
 
-    Swal.fire("Felicidades", `Su contraseña es válida: ${passwordValue}`, "success");
+   
 }
