@@ -96,3 +96,14 @@ if (age < 13) {
   } else {
     console.log("Edad no válida.");
   }
+
+  let base = parseFloat(prompt("ingrese la base (mayor cero)"));
+  let altura = parseFloat(prompt("ingrese la altura  (mayor cero)"));
+  if(base > 0 && altura > 0){
+    let area = base*altura;
+    Swal.fire("el area es igual a:"+ area);
+
+  }else{
+    Swal.fire("❌ingrese valores validos (mayores quecero)");
+  }
+  
