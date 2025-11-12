@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        background-color: #f4f4f9;
+        color: #333;
+        }
+        input {
+        margin: 8px 0;
+        padding: 8px;
+        font-size: 16px;
+        }
+        button {
+        padding: 8px 14px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        margin-right: 8px;
+        }
+        #btnContar {
+        background-color: #007bff;
+        color: white;
+        }
+        #btnContar:hover {
+        background-color: #0056b3;
+        }
+        #btnLimpiar {
+        background-color: #6c757d;
+        color: white;
+        }
+        #btnLimpiar:hover {
+        background-color: #555;
+        }
+        #resultado {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Contador de letras</h2>
+    
+    <label for="">Ingrese una palabra</label>
+    <input type="text" id="palabra">
+    
+    <label for="">Ingrese la letra que desea buscar</label>
+    <input type="text" id="letra" maxlength="1">
+
+    <button id="btnContar" onclick="contarLetra()">Contar Letras</button>
+    <button id="btnLimpiar" onclick="limpiarCampos()">Limpiar Campos</button>
+
+    <div id="resultado"></div>
+    
+    <script>
+        // Evento para poner foco al primer input
+        window.onload = () => {
+            document.getElementById("palabra").focus();
+        }
+
+        function contarLetra(){
+            let pal_input   = document.getElementById("palabra").value;
+            let letra_input = document.getElementById("letra").value;
+
+            // Hagamos validaciones
+            if(pal_input === "" || letra_input === ""){
+                document.getElementById("resultado").innerHTML = "❌ Complete los dos campos ❌"
+                return
+            }
+
+            // Pasar datos a minúscula y garantizar comparación
+            let pal_input_minus = pal_input.toLowerCase();
+            let letra_input_minus = letra_input.toLowerCase();
+
+            // Contar coincidencias
+            let cont = 0; // Va a contar las repeticiones
+            for(let p=0;p<pal_input.length;p++){
+                if(pal_input_minus[p] == letra_input_minus){
+                    cont++;
+                }
+            }
+
+            document.getElementById("resultado").innerHTML = 
+                `Le letra <b>${letra_input.toUpperCase()}</b> se encuentra <b>${cont}</b> veces en la palabra <b>${pal_input.toUpperCase()}</b>`
+        }
+
+        function limpiarCampos(){
+            document.getElementById("palabra").value = "";
+            document.getElementById("letra").value = "";
+            document.getElementById("resultado").innerHTML = "";
+            document.getElementById("palabra").focus();
+        }
+    </script>
+
+</body>
+</html>
