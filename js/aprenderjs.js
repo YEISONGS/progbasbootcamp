@@ -39,7 +39,7 @@ let estudiantes = [
     {nombre:"Antonella", edad:"3"},
     {nombre:"Sara", edad:"0"}
 ]
-<<<<<<< HEAD
+
 console.log(estudiantes[0].nombre + " - " + estudiantes[0].edad)
 
 // ######### OPERADORES LÓGICOS => AND / OR / NOT
@@ -112,7 +112,7 @@ if (age < 13) {
     Swal.fire("❌ingrese valores validos (mayores quecero)");
   }
   
-=======
+
 console.log(estudiantes[0].nombre + " - " + estudiantes[0].edad);
 
 // ######### OPERADORES LÓGICOS => AND / OR / NOT
@@ -226,4 +226,4 @@ for(let p=0;p<pal_input.length;p++){
 }
 // console.log("La letra a se encuentra " + cont + " veces");
 Swal.fire("La letra " + letra_input.toUpperCase() + " se encuentra " + cont + " veces en la palabra " + pal_input.toUpperCase());
->>>>>>> c25dff8 (tarea al dia)
+
